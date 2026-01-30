@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Vaishnavi or another</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+
+<body>
+    <div id="game-container">
+        <canvas id="gameCanvas"></canvas>
+
+        <div id="ui-layer">
+            <div id="start-screen" class="screen">
+                <h1 class="minecraft-font title">One Vaishnavi<br>or another</h1>
+                <img src="Photos/bird.png" alt="Bird Preview" style="width: 120px; height: auto; margin-bottom: 20px;">
+                <button id="start-btn" class="minecraft-btn">START GAME</button>
+                <p class="instruction">Click or Space to Jump</p>
+            </div>
+
+            <div id="game-over-screen" class="screen hidden">
+                <h1 class="minecraft-font title">GAME OVER</h1>
+                <div id="score-display">Score: <span id="final-score">0</span></div>
+                <button id="restart-btn" class="minecraft-btn">RESPAWN</button>
+            </div>
+
+            <div id="win-screen" class="screen hidden">
+                <h1 class="minecraft-font title" style="color: #ffd700;">WINNER!</h1>
+                <img id="winner-display-img" src="Photos/winning.jpeg" alt="Winner"
+                    style="max-width: 80%; border: 4px solid #fff; margin: 20px 0;">
+                <div id="win-score-display">Score: <span id="win-score">0</span></div>
+                <button id="win-restart-btn" class="minecraft-btn">PLAY AGAIN</button>
+            </div>
+
+            <div id="hud" class="hidden">
+                <span id="current-score" class="minecraft-font">0</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Assets Preloading -->
+    <div style="display:none;">
+        <img id="bird-img" src="Photos/bird.png" alt="bird">
+        <img id="wall-img" src="Photos/obstacle.jpeg" alt="wall">
+        <audio id="bg-music" loop>
+            <source src="Audio/bird audio.mp4" type="audio/mp4">
+        </audio>
+        <audio id="hit-sound">
+            <source src="Audio/hit.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="win-sound">
+            <source src="Audio/winning.mp4" type="audio/mp4">
+        </audio>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

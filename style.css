@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+/* Minecraft-like Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+body {
+    background-color: #2a2a2a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'VT323', monospace;
+}
+
+#game-container {
+    position: relative;
+    width: 480px;
+    /* Reduced width for better mobile/game feel similar to screenshot portrait mode */
+    height: 640px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    background-color: #d0f4f7;
+    /* Sky color */
+    border: 8px solid #5d4037;
+    /* Brown/Wood border */
+}
+
+/* Background imitation (mocking the city/sky if possible via CSS or just sky) */
+#game-container {
+    background: linear-gradient(#87CEEB 70%, #4a8f30 70%);
+    /* Sky and Grass hint */
+}
+
+canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#ui-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    /* Let clicks pass through to canvas if needed, but buttons need pointer-events auto */
+}
+
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.4);
+    pointer-events: auto;
+    z-index: 10;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Typography */
+.minecraft-font {
+    font-family: 'VT323', monospace;
+    color: #ffffff;
+    text-shadow: 3px 3px 0 #000;
+}
+
+.title {
+    font-size: 64px;
+    margin-bottom: 20px;
+    color: #fca000;
+    /* Gold text */
+    text-align: center;
+}
+
+.instruction {
+    color: #eee;
+    margin-top: 10px;
+    font-size: 24px;
+    text-shadow: 2px 2px 0 #000;
+}
+
+/* Buttons */
+.minecraft-btn {
+    font-family: 'VT323', monospace;
+    font-size: 32px;
+    color: #fff;
+    background-color: #727272;
+    /* Stone gray */
+    border: 4px solid #000;
+    border-top-color: #9e9e9e;
+    border-left-color: #9e9e9e;
+    border-right-color: #3e3e3e;
+    border-bottom-color: #3e3e3e;
+    padding: 10px 40px;
+    cursor: pointer;
+    text-shadow: 2px 2px 0 #000;
+    transition: transform 0.1s;
+    pointer-events: auto;
+}
+
+.minecraft-btn:hover {
+    background-color: #828282;
+}
+
+.minecraft-btn:active {
+    background-color: #5e5e5e;
+    border-top-color: #3e3e3e;
+    border-left-color: #3e3e3e;
+    border-right-color: #9e9e9e;
+    border-bottom-color: #9e9e9e;
+    transform: translateY(2px);
+}
+
+/* HUD */
+#hud {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: auto;
+    text-align: right;
+    pointer-events: none;
+    z-index: 5;
+}
+
+#current-score {
+    font-size: 60px;
+    color: #fff;
+    text-shadow: 3px 3px 0 #000;
+}
